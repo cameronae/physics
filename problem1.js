@@ -1,14 +1,14 @@
  // Setup
         const a = Math.floor(Math.random() * (200 - 100 + 1)) + 100; // Random number between 5 and 15
         const b = Math.floor(Math.random() * (70 - 30 + 1)) + 30; // Random number between 3 and 5
-        const radians = ${b} * (Math.PI / 180);
+        const radians = b * (Math.PI / 180);
         // Display random values for a and b
         document.getElementById('aValue').textContent = a;
         document.getElementById('bValue').textContent = b;
         
         // Answers
         
-        const ansA = (${a}^2 * Math.cos^2(radians) * (Math.tan(radians) + Math.sqrt(Math.tan^2(radians))) /9.80; // Equation for part a
+        const ansA = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2)) /9.80; // Equation for part a
         //const ansB = ((a ** 2) + (b ** 2)) / (2 * b); // Length of the wire for part b
 
         // Check answers
