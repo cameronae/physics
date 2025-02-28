@@ -20,7 +20,7 @@
             let resultText = '';
 
             // Check part a
-            if (userAnsA === ansA) {
+            if (Math.abs(userAnsA - ansA) < 0.02) {
                 resultText += "Part a is correct!<br>";
             } else {
                 resultText += `Part a is incorrect. The correct equation is: ${ansA}<br>`;
