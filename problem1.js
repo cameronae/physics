@@ -8,7 +8,7 @@
         
         // Answers
         
-        const ansA = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2)) /9.80; // Equation for part a
+        const ansA = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2))) / 9.80; // Equation for part a
         //const ansB = ((a ** 2) + (b ** 2)) / (2 * b); // Length of the wire for part b
 
         // Check answers
