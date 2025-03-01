@@ -8,7 +8,8 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #B2BEB5;
-    font-family: 'Arial', sans-serif, #000000;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
 
         }        
         .question {
