@@ -17,17 +17,17 @@
             at <span id="theta"></span>° above the horizontal. 
         </p>
         <p>
-                How far away is the ship from the cannon?
+            a) How far away is the ship from the cannon?
         </p>
         <p>
-            Answer: <input type="text" id="answerA" placeholder="Enter answer here" size="30">
+            Answer: <input type="text" id="answerA" placeholder="Enter your answer here" size="30">
         </p>
          <p>
-            b) Solve the equation and give the length of the wire.
+            b) How far away would the ship be if this situation occured on a plannet with g = 2.0?
         </p>
         <p>
             Answer: <input type="text" id="answerB" placeholder="Enter your answer here" size="10"> feet
-        </p> --->
+        </p> 
         <button onclick="checkAnswers()">Check Answers</button>
     </div>
     <div class="result" id="result"></div>
@@ -43,7 +43,7 @@
         // Answers
         
         const ansA = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2))) / 9.80; // Equation for part a
-        const ansB = ((a ** 2) + (b ** 2)) / (2 * b); // Length of the wire for part b
+        const ansB = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2))) / 2.0; // Length of the wire for part b
 
         // Check answers
         function checkAnswers() {
