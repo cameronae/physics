@@ -1,9 +1,16 @@
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #222222;
-            margin: 20px;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222222;
+    font-family: 'Arial', sans-serif;
+
+        }        
         .question {
             margin-bottom: 20px;
         }
