@@ -1,8 +1,11 @@
 
 body {
     margin: 0; /* Reset default body margin */
-    padding: 100px 0 0 100px; /* Add padding to shift content down and to the right */
+    padding: 0; /* Add padding to shift content down and to the right */
     height: 100vh;
+    display: flex;
+    align-items: center;
+    
     background-color: #1b2631;
     font-family: 'Arial', sans-serif;
     color: white;
