@@ -1,28 +1,36 @@
 
 body {
-    margin: 100px;
-    padding: 20px;
-    
-
+    margin: 0; /* Reset default body margin */
+    padding: 100px 0 0 100px; /* Add padding to shift content down and to the right */
     height: 100vh;
     background-color: #1b2631;
     font-family: 'Arial', sans-serif;
     color: white;
+    box-sizing: border-box; /* Ensure padding is included in the height calculation */
+}
 
-        }        
-        .question {
-            margin-bottom: 20px;
-        }
-        input {
-            margin: 5px 0;
-        }
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .result {
-            margin-top: 20px;
-            font-weight: bold;
-        }
+/* Optional: Add a wrapper to control the content area */
+.wrapper {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+input {
+    margin: 5px 0;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+}
