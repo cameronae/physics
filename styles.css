@@ -5,8 +5,6 @@ body {
     height: 100vh;
     background-color: #1b2631;
     font-family: 'Arial', sans-serif;
-    border: 2px solid #000; /* Border width, style, and color */
-    border-radius: 15px; /* Adjust this value to control the roundness */
     color: white;
     box-sizing: border-box; /* Ensure padding is included in the height calculation */
 }
@@ -19,6 +17,8 @@ body {
 
 .question {
     margin-bottom: 20px;
+     border: 2px solid #000; /* Border width, style, and color */
+    border-radius: 15px; /* Adjust this value to control the roundness */
 }
 
 input {
