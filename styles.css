@@ -5,6 +5,7 @@ body {
     height: 100vh;
     background-color: #1b2631;
     font-family: 'Arial', sans-serif;
+    border: 5px solid gray;
     color: white;
     box-sizing: border-box; /* Ensure padding is included in the height calculation */
 }
