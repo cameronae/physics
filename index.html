@@ -54,8 +54,8 @@
         const b = Math.floor(Math.random() * (70 - 30 + 1)) + 30; // Random number between 30 and 70
         const radians = b * (Math.PI / 180);
         //random vars for problem 2
-        const c = Math.floor(Math.random() * (33 - 18 + 1) + 18; //rand between 18-33 degrees for bank
-        const d = Math.floor(Math.random() * (90 - 70 + 1) + 70; // rand between 1450-1540 kg for car speed
+        const c = Math.floor(Math.random() * (33 - 18 + 1)) + 18; //rand between 18-33 degrees for bank
+        const d = Math.floor(Math.random() * (90 - 70 + 1)) + 70; // rand between 1450-1540 kg for car speed
         // Display random values for a and b
         document.getElementById("velo").textContent = a;
         document.getElementById("theta").textContent = b;
@@ -98,21 +98,21 @@
         }
         function checkAnswer2(){
             
-            const userAns2 = document.getElementById('answer2');
+            const userAns2 = document.getElementById('answer2').value.trim();
             const result2 = document.getElementById('result2');
 
             let resultText = '';
-            if (userAns2 == 'yes' || userAns2 == 'Yes' && d <= ans2)
+            if if ((userAns2 == 'yes' || userAns2 == 'Yes') && d <= ans2)
             {
                 resultText += 'Correct!';
             }
-            else if (userAns2 == 'no' || userAns2 == 'No' && d > ans2)
+            else if ((userAns2 == 'no' || userAns2 == 'No') && d > ans2)
             {
                 resultText += 'Correct!';
             }
             else
             {
-                resultText += 'Incorrect try again.
+                resultText += 'Incorrect try again.';
             }
 
             //display result
