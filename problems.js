@@ -45,7 +45,7 @@ function checkAnswers() {
     // Display result
     resultDiv.innerHTML = resultText;
 }
-function checkAnswer2(){
+/*function checkAnswer2(){
     
     const userAns2 = document.getElementById('answer2').value.trim();
     const result2 = document.getElementById('result2');
@@ -66,4 +66,4 @@ function checkAnswer2(){
 
     //display result
     result2.innerHTML = resultTxt;
-}
+}*/
