@@ -13,10 +13,7 @@ body {
 }
 
 /* Optional: Add a wrapper to control the content area */
-.wrapper {
-    max-width: 800px; /* Adjust as needed */
-    margin: 0 auto; /* Center the content horizontally */
-}
+
 
 .question {
     margin-bottom: 20px;
