@@ -50,20 +50,20 @@ function checkAnswer2(){
     const userAns2 = document.getElementById('answer2').value.trim();
     const result2 = document.getElementById('result2');
 
-    let resultText = '';
+    let resultTxt = '';
     if ((userAns2 == 'yes' || userAns2 == 'Yes') && d <= ans2)
     {
-        resultText += 'Correct!';
+        resultTxt += 'Correct!';
     }
     else if ((userAns2 == 'no' || userAns2 == 'No') && d > ans2)
     {
-        resultText += 'Correct!';
+        resultTxt += 'Correct!';
     }
     else
     {
-        resultText += 'Incorrect try again.';
+        resultTxt += 'Incorrect try again.';
     }
 
     //display result
-    result2.innerHTML = resultText;
+    result2.innerHTML = resultTxt;
 }
