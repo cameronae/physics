@@ -5,6 +5,7 @@ body {
     height: 100vh;    
     font-family: 'Arial', sans-serif;
     color: black;
+    margin: auto; /*centers the text*/
     box-sizing: border-box; /* Ensure padding is included in the height calculation */
 }
 
@@ -13,8 +14,7 @@ body {
 
 .question {
     margin-bottom: 20px;
-     border: 2px solid #000; /* Border width, style, and color */
-    border-radius: 15px; /* Adjust this value to control the roundness */
+     
 }
 
 input {
