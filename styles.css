@@ -3,7 +3,7 @@ body {
     margin: 0; /* Reset default body margin */
     padding: 0; /* Add padding to shift content down and to the right */
     height: 100vh;    
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', serif;
     color: black;
     margin: auto; /*centers the text*/
     text-align: center;
