@@ -14,9 +14,10 @@
 }
 
 body {
-  margin: auto;
+  margin: 0 auto;
   padding: 20px;
   max-width: 800px;
+  width: 100%;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   font-family: 'Press Start 2P', 'Courier New', monospace;
