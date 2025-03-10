@@ -1,11 +1,10 @@
 
 body {
-    margin: 0; /* Reset default body margin */
+    margin: 0 auto; /* Reset default body margin */
     padding: 0; /* Add padding to shift content down and to the right */
     height: 100vh;    
     font-family: 'Times New Roman', serif;
     color: black;
-    margin: auto; /*centers the text*/
     box-sizing: border-box; /* Ensure padding is included in the height calculation */
 }
 
