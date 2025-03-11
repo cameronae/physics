@@ -52,6 +52,23 @@
         <button onclick="checkAnswer2()">Check Answer</button>
         <div class="result" id="result2"></div>
     </div>
+
+    <div class="question">
+      <h1>Problem 3</h1>
+      <p>
+        Sisyphus is pushing a boulder of mass <span id="boulder"></span> kg up a
+        hill with an incline of <span id="hill"></span>°. The coeffiecnt of
+        kinetic friction between the boulder and the hill is
+        <span id="friction"></span>
+      </p>
+      <p>
+        What is the minimum amount of force that Sisyphus has to exert on the
+        boulder in order to push the boulder up the hill?
+      </p>
+      <p>Answer:<input type="text" id="answer3" placeholder="Enter answer here" size="30"/></p>
+      <button onclick="checkAnswer3()">Check Answer</button>
+      <div class="result" id="result3"></div>
+    </div>
     
     <script>
    //random vars for problem 1
@@ -60,20 +77,39 @@ const b = Math.floor(Math.random() * (70 - 30 + 1)) + 30; // Random number betwe
 const radians = b * (Math.PI / 180);
 //random vars for problem 2
 const c = Math.floor(Math.random() * (33 - 18 + 1)) + 18; //rand between 18-33 degrees for bank
+const bankAng = c * (Math.PI / 180);
 const d = Math.floor(Math.random() * (90 - 70 + 1)) + 70; // rand between 1450-1540 kg for car speed
+
+//random vars for problem 3
+const e = Math.floor(Math.random() * (20000 - 15000 + 1)) + 15000; //rand for mass of boulder
+const f = Math.floor(Math.random() * (80 - 60 + 1)) + 60; //rand for hill degree
+const hillAng = f * (Math.PI / 180); //convert angle to radian
+const g = Math.floor(Math.random() * (0.9 - 0.4)) + 0.4; //rand for the friction coeffiecent DO NOT need the + 1 cuz it gets rid of 0
+        
 // Display random values for a and b
 document.getElementById("velo").textContent = a;
 document.getElementById("theta").textContent = b;
+        
 //display for second problem
 document.getElementById("bank").textContent = c;
 document.getElementById("speed").textContent = d;
+
+//display for third problem
+document.getElementById("boulder").textContent = e;
+document.getElementById("hill").textContent = f;
+document.getElementById("friction").textContent = g;
+
 
 // Answers
 //prob 1
 const ansA = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2))) / 9.80; // Equation for part a
 const ansB = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2))) / 2.0; // equation with gravity = 2.0 m/s^2
 
-const ans2 = (Math.sqrt( (150 * 9.8 * (Math.sin(c) + Math.cos(c))) / (Math.cos(c) - Math.sin(c))));
+//problem 2
+const ans2 = Math.sqrt((150 * 9.8 * (Math.sin(bankAng) + Math.cos(bankAng))) / (Math.cos(bankAng) - Math.sin(bankAng)));
+
+//problem 3
+const ans3 = ((e * 9.8) * (Math.sin(hillAng) + g * Math.cos(hillAng)));
 
 // Check answers
 function checkAnswers() {
@@ -123,6 +159,22 @@ function checkAnswer2(){
     //display result
     result2.innerHTML = resultTxt;
 } 
+function checkAnswer3() {
+    const userAns3 = parseFloat(document.getElementById("answer3").value.trim());
+    const result3 = document.getElementById("result3");
+
+    let resultText3 = "";
+    if(Math.abs(userAns3 - ans3) < 0.01)
+      {
+        resultText3 += "Correct!";
+      }
+    else 
+      {
+        resultText3 += "Incorrect try again.";
+      }
+
+      result3.innerHTML = resultText3;
+      }
     </script>
   </body>
     </html>
