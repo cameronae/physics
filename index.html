@@ -135,9 +135,9 @@
 
         // Check part a
         if (Math.abs(userAnsA - ansA) < 0.01) {
-          resultText += "Part a is correct!<br>";
+          resultText += "Part a is correct!";
         } else {
-          resultText += `Part a is incorrect. The correct equation is: ${ansA}<br>`;
+          resultText += "Part a is incorrect.";
         }
 
         //check part b
@@ -145,9 +145,7 @@
           // Allow for small floating-point differences
           resultText += "Part b is correct!";
         } else {
-          resultText += `Part b is incorrect. The correct length is: ${ansB.toFixed(
-            2
-          )} feet`;
+          resultText += "Part b is incorrect.";
         }
 
         // Display result
