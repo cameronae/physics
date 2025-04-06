@@ -84,6 +84,22 @@
       <div class="result" id="result3"></div>
     </div>
 
+    <div class="retro-container">
+      <h1>Problem 4</h1>
+      <p>
+        A tractor trailer and fiat get in a head on collison. When the truck hits the fiat they continue off in the same 
+        direction. The truck has a mass of 15,000 kg and initial velocity is <span id="truckSpeed"></span> km per hour,
+        and the fiat's mass is 1,200 kg with an initial velovcity of <span id="fiatSpeed"></span> km per hour.
+      </p>
+      <p>
+        What is their final velocity moving together?
+      </p>
+      <p>Answer: <input type="text" id="answer4" placeholder="Enter your answer here" size="25"/></p>
+      <button onclick="checkAnswer4()">Check Answer</button>
+      <div class="result" id="result4"></div>
+      </div>
+    
+
     <script>
       //random vars for problem 1
       const a = Math.floor(Math.random() * (200 - 100 + 1)) + 100; // Random number between 100 and 200
@@ -101,6 +117,12 @@
       const hillAng = f * (Math.PI / 180); //convert angle to radian
       const g = Math.floor(Math.random() * (0.9 - 0.4)) + 0.4; //rand for the friction coeffiecent DO NOT need the + 1 cuz it gets rid of 0
 
+      //random vars for problem 4
+      const truckSpeed = Math.floor(Math.random() * (120 - 95 + 1)) + 70;//rand for velocity of truck
+      const fiatSpeed = Math.floor(Math.random() * (60 - 30)) - 60; //rand velocity for fiat
+      //convert speeds into m/s from kilometer per hour
+      const ts = (truckSpeed * 1000) / 3600;
+      const pmo = (fiatSpeed * 1000) / 3600;
       // Display random values for a and b
       document.getElementById("velo").textContent = a;
       document.getElementById("theta").textContent = b;
@@ -114,15 +136,25 @@
       document.getElementById("hill").textContent = f;
       document.getElementById("friction").textContent = g;
 
+      //display for fourth problem
+      document.getElementById("truckSpeed").textContent = truckSpeed;
+      document.getElementById("fiatSpeed").textContent = fiatSpeed;
+
       // Answers
       //prob 1
         const ansA = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2))) / 9.8; // Equation for part a
         const ansB = (a ** 2 * Math.cos(radians) ** 2 * (Math.tan(radians) + Math.sqrt(Math.tan(radians) ** 2))) / 2.0; // equation with gravity = 2.0 m/s^2
     //prob 2
+    //use max speed formula for banked track with friction
         const ans2 = Math.sqrt((150 * 9.8 * (Math.sin(bankAng) + Math.cos(bankAng))) / (Math.cos(bankAng) - Math.sin(bankAng)));
 
     //prob 3
+    //use 
         const ans3 = ((e * 9.8) * (Math.sin(hillAng) + g * Math.cos(hillAng)));
+
+        //prob 4
+        //Pi = Pf m1v1 = v2(m1 + m2)
+        const ans4 = (15000 * (ts + (-1 *pmo))) / 17000;
 
       // Check answers
       function checkAnswers() {
@@ -137,15 +169,15 @@
         if (Math.abs(userAnsA - ansA) < 0.01) {
           resultText += "Part a is correct!<br>";
         } else {
-          resultText += "Part a is incorrect.";
+          resultText += "Part a is incorrect. ";
         }
 
         //check part b
         if (Math.abs(userAnsB - ansB) < 0.01) {
           // Allow for small floating-point differences
-          resultText += "Part b is correct!";
+          resultText += "Part b is correct! ";
         } else {
-          resultText += "Part b is incorrect.";
+          resultText += "Part b is incorrect. ";
         }
 
         // Display result
@@ -182,6 +214,20 @@
       }
 
       result3.innerHTML = resultText3;
+      }
+
+      function checkAnswer4() {
+        const userAns4 = parseFloat(document.getElementById("answer4").value.trim());
+        const result4 = document.getElementById("result4");
+
+        let resultText4 = "";
+        if(Math.abs(userAns4 - ans4) < 0.01){
+          resultText4 += "Correct!";
+        }
+        else{
+          resultText4 += "Incorrect try again.";
+        }
+        result4.innerHTML = resultText4;
       }
     </script>
   </body>
