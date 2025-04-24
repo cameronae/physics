@@ -21,7 +21,7 @@
       <p>
         A cannon is fired at a ship with the initial velocity
         <span id="velo"></span> m/s. The cannon is angled at
-        <span id="theta"></span>° above the horizontal.
+        <span id="theta"></span>° above the horizontal. Both cannon and ship are on the same level.
       </p>
       <p>a) How far away is the ship from the cannon?</p>
       
@@ -43,8 +43,11 @@
         meters.
       </p>
       <button onclick="checkAnswers()">Check Answers</button>
+      <p>Attemps: <span id="count1"></span></p>
       <div class="result" id="result"></div>
+      <!--<button id="attempts1">Attempts: <span id="count1">0</span></button>-->
     </div>
+    
     
 
     <div class="retro-container">
@@ -58,7 +61,7 @@
       </p>
       <p>
         Dale drives at <span id="speed"></span> m/s, does his car fly off the
-        track or does he stick?
+        track or does he stick? (yes for stick, no for fly off)
       </p>
       <p>Answer:<input type="text" id="answer2" placeholder="Yes or no" size="10" /></p>
       <button onclick="checkAnswer2()">Check Answer</button>
@@ -114,6 +117,8 @@
       <h1><button onclick="showAnswers()">Show all Answers</button></h1>
         <div class="show" id="showAll"></div>
       </div>
+      
+     
     
 
     <script>
@@ -121,6 +126,15 @@
       const a = Math.floor(Math.random() * (200 - 100 + 1)) + 100; // Random number between 100 and 200
       const b = Math.floor(Math.random() * (70 - 30 + 1)) + 30; // Random number between 30 and 70
       const radians = b * (Math.PI / 180); // convert angle to radians
+      //const attempts1Button = document.getElementById("attempts1");
+      const clickDisplay = document.getElementById("count1");
+      let clickCount = 0;
+
+      /*attempts1Button.addEventListener("click", function(){
+        clickCount++;
+        clickDisplay.textContent = clickCount;
+      });*/
+      
 
       //random vars for problem 2
       const c = Math.floor(Math.random() * (33 - 18 + 1)) + 18; //rand between 18-33 degrees for bank
@@ -174,7 +188,7 @@
 
     //prob 3
     //use 
-        const ans3 = ((e * 9.8) * (Math.sin(hillAng) + g * Math.cos(hillAng)));
+        const ans3 = ((e * 9.8) * (Math.sin(hillAng) + (g * Math.cos(hillAng))));
 
         //prob 4
         //Pi = Pf m1v1 = v2(m1 + m2)
@@ -185,6 +199,8 @@
 
       // Check answers
       function checkAnswers() {
+        clickCount++;
+        clickDisplay.textContent = clickCount;
         const userAnsA = parseFloat(document.getElementById("answerA").value.trim());
         const userAnsB = parseFloat(document.getElementById("answerB").value.trim());
 
@@ -193,14 +209,14 @@
         let resultText = "";
 
         // Check part a
-        if (Math.abs(userAnsA - ansA) < 0.01) {
+        if (Math.abs(userAnsA - ansA) < 0.5) {
           resultText += "Part a is correct!<br>";
         } else {
           resultText += "Part a is incorrect. ";
         }
 
         //check part b
-        if (Math.abs(userAnsB - ansB) < 0.01) {
+        if (Math.abs(userAnsB - ansB) < 0.5) {
           // Allow for small floating-point differences
           resultText += "Part b is correct! ";
         } else {
@@ -231,7 +247,7 @@
         const result3 = document.getElementById("result3");
 
         let resultText3 = "";
-        if(Math.abs(userAns3 - ans3) < 0.01)
+        if(Math.abs(userAns3 - ans3) < 0.5)
       {
         resultText3 += "Correct!";
       }
@@ -248,7 +264,7 @@
         const result4 = document.getElementById("result4");
 
         let resultText4 = "";
-        if(Math.abs(userAns4 - ans4) < 0.01){
+        if(Math.abs(userAns4 - ans4) < 0.5){
           resultText4 += "Correct!";  
         }
         else{
@@ -261,7 +277,7 @@
         const result5 = document.getElementById("result5");
 
         let resultText5 = "";
-        if(Math.abd(userAns5 - ans5) < 0.01){
+        if(Math.abs(userAns5 - ans5) < 0.5){
           resultText5 += "Correct!";
         }
         else{
