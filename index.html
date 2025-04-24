@@ -43,9 +43,8 @@
         meters.
       </p>
       <button onclick="checkAnswers()">Check Answers</button>
-      <p>Attemps: <span id="count1"></span></p>
+      <!--<p>Attemps: <span id="count1"></span></p>-->
       <div class="result" id="result"></div>
-      <!--<button id="attempts1">Attempts: <span id="count1">0</span></button>-->
     </div>
     
     
@@ -199,8 +198,8 @@
 
       // Check answers
       function checkAnswers() {
-        clickCount++;
-        clickDisplay.textContent = clickCount;
+        /*clickCount++;
+        clickDisplay.textContent = clickCount;*/
         const userAnsA = parseFloat(document.getElementById("answerA").value.trim());
         const userAnsB = parseFloat(document.getElementById("answerB").value.trim());
 
