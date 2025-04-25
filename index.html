@@ -43,8 +43,9 @@
         meters.
       </p>
       <button onclick="checkAnswers()">Check Answers</button>
-      <!--<p>Attemps: <span id="count1"></span></p>-->
+      <p>Attemps: <span id="count1"></span></p>
       <div class="result" id="result"></div>
+      <!--<button id="attempts1">Attempts: <span id="count1">0</span></button>-->
     </div>
     
     
@@ -64,6 +65,7 @@
       </p>
       <p>Answer:<input type="text" id="answer2" placeholder="Yes or no" size="10" /></p>
       <button onclick="checkAnswer2()">Check Answer</button>
+      <p>Attemps: <span id="count2"></span></p>
       <div class="result" id="result2"></div>
     </div>
     <div class="retro-container">
@@ -80,6 +82,7 @@
       </p>
       <p>Answer:<input type="text" id="answer3" placeholder="Enter your answer here" size="25"/></p>
       <button onclick="checkAnswer3()">Check Answer</button>
+      <p>Attemps: <span id="count3"></span></p>
       <div class="result" id="result3"></div>
     </div>
 
@@ -95,6 +98,7 @@
       </p>
       <p>Answer: <input type="text" id="answer4" placeholder="Enter your answer here" size="25"/></p>
       <button onclick="checkAnswer4()">Check Answer</button>
+      <p>Attemps: <span id="count4"></span></p>
       <div class="result" id="result4"></div>
       </div>
 
@@ -108,6 +112,7 @@
         </p>
         <p>Answer: <input type="text" id="answer5" placeholder="Enter your answer here:" size="25"/></p>
         <button onclick="checkAnswer5()">Check Answer</button>
+        <p>Attemps: <span id="count5"></span></p>
         <div class="result" id="result5"></div>
         
       </div>
@@ -126,8 +131,12 @@
       const b = Math.floor(Math.random() * (70 - 30 + 1)) + 30; // Random number between 30 and 70
       const radians = b * (Math.PI / 180); // convert angle to radians
       //const attempts1Button = document.getElementById("attempts1");
-      const clickDisplay = document.getElementById("count1");
-      let clickCount = 0;
+      const clickDisplay1 = document.getElementById("count1");
+      const clickDisplay2 = document.getElementById("count2");
+      const clickDisplay3 = document.getElementById("count3");
+      const clickDisplay4 = document.getElementById("count4");
+      const clickDisplay5 = document.getElementById("count5");
+      let clickCount = [0,0,0,0,0];
 
       /*attempts1Button.addEventListener("click", function(){
         clickCount++;
@@ -198,8 +207,8 @@
 
       // Check answers
       function checkAnswers() {
-        /*clickCount++;
-        clickDisplay.textContent = clickCount;*/
+        clickCount[0]++;
+        clickDisplay1.textContent = clickCount[0];
         const userAnsA = parseFloat(document.getElementById("answerA").value.trim());
         const userAnsB = parseFloat(document.getElementById("answerB").value.trim());
 
@@ -226,6 +235,8 @@
         resultDiv.innerHTML = resultText;
       }
       function checkAnswer2() {
+        clickCount[1]++;
+        clickDisplay2.textContent = clickCount[1];
         const userAns2 = document.getElementById("answer2").value.trim();
         const result2 = document.getElementById("result2");
 
@@ -242,6 +253,8 @@
         result2.innerHTML = resultTxt;
       }
       function checkAnswer3() {
+        clickCount[2]++;
+        clickDisplay3.textContent = clickCount[2];
         const userAns3 = parseFloat(document.getElementById("answer3").value.trim());
         const result3 = document.getElementById("result3");
 
@@ -259,6 +272,8 @@
       }
 
       function checkAnswer4() {
+        clickCount[3]++;
+        clickDisplay4.textContent = clickCount[3];
         const userAns4 = parseFloat(document.getElementById("answer4").value.trim());
         const result4 = document.getElementById("result4");
 
@@ -272,6 +287,8 @@
         result4.innerHTML = resultText4;
       }
       function checkAnswer5(){
+        clickCount[4]++;
+        clickDisplay5.textContent = clickCount[4];
         const userAns5 = parseFloat(document.getElementById("answer5").value.trim());
         const result5 = document.getElementById("result5");
 
